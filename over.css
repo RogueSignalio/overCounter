@@ -1,0 +1,172 @@
+  :root {
+    --sbfront: #1e70aa50;
+    --sbback: #00000050;
+    --mydarkblue: rgba(21, 38, 44, 0.8);
+    --myblue: rgba(33, 61, 69, 0.8);
+    --mylightblue: rgba(103, 121, 199, 0.8);
+    --myorange: rgba( 210, 61, 41, 0.8);
+    --myyellow: rgba(255, 159, 71, 0.8);
+  }
+
+  body{
+  	min-height: 100%;  
+  	background: #000000 url("assets/roguesignal_bg.png") repeat center bottom/cover;
+    background-size: 40%;
+	  width: 100%;
+	  height: 100%;
+	  margin: 0px;
+    color: #ABBD88;
+	  font-size: 24px;
+	  overflow-y: hidden;
+    font-family: Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .control_icon {
+    right:20px;
+    top: 0px;
+    position:absolute;
+    text-align: center;
+    z-index:10001;
+
+  }
+  #controls {
+    visibility: hidden;
+  }
+  a {
+    color: var(--myorange);
+  }
+
+  .controls {
+    display:unset;
+    position:absolute;
+    right:0px;top:50px;
+    opacity:0.9;
+    max-height:500px;
+    width:155px;
+    border-style:solid;
+    border-color:var(--mydarkblue);
+    border-width:0px 0px 0px 0px;
+    border-radius: 0px 0px 0px 10px;
+    background-color: var(--mydarkblue);
+    overflow-y:auto;
+    z-index:10001;
+    padding-left: 10px;
+  }
+  button {
+  	background-color: #000000;
+    color: var(--myyellow);
+    border-radius: 10px;
+    border-color: var(--myorange);
+		padding: 3px;
+	  font-size: 22px;
+    min-width: 125px;
+	  touch-action: manipulation;
+    margin:5px;
+    margin-right:0px;
+    margin-left:0px;
+    cursor: pointer;
+    vertical-align:middle;
+  }
+  button:hover {
+    box-shadow: 5px 5px 5px 0px var(--myorange);
+  }
+
+  input[type=checkbox]:focus {
+    outline: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  input[type=checkbox] {
+    background-color: #222222;
+    border-radius: 2px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+    position: relative;
+    top: 5px;
+    color: #000000;
+    pointer-events: none;
+  }
+
+  input[type=checkbox]:checked {
+    background-color: var(--myorange);
+    background: var(--myorange) url("data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==") 3px 3px no-repeat;
+  }
+  .toggle {
+    min-width: 10px;
+  }
+  .logo {
+    position:absolute;
+    color: var(--myblue);
+    background-color:#000000;
+    opacity:0.9;
+    top:50px;
+    z-index:-999;
+    min-width: 200px; 
+    border-style:solid;
+    border-color:#000000;
+    border-width:3px;
+    border-radius: 10px;
+    padding:10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+    border-color: var(--mydarkblue);
+    cursor: pointer;
+    transition: box-shadow 0.4s;
+    -moz-transition: box-shadow 0.4s; /* Firefox 4 */
+    -webkit-transition: box-shadow 0.4s; /* Safari and Chrome */
+    -o-transition: box-shadow 0.4s; /* Opera */
+  }
+  .logo:hover {
+    box-shadow: 0px 0px 10px 10px var(--mydarkblue);
+    transition: box-shadow 1s;
+    -moz-transition: box-shadow 1s; /* Firefox 4 */
+    -webkit-transition: box-shadow 1s; /* Safari and Chrome */
+    -o-transition: box-shadow 1s; /* Opera */
+  }
+  .logo:active, focus {
+    border-color: var(--myblue);
+    box-shadow: 0px 0px 10px 20px var(--myblue);
+    background-color:var(--mydarkblue);
+    transition: box-shadow 1s;
+    -moz-transition: box-shadow 1s; /* Firefox 4 */
+    -webkit-transition: box-shadow 1s; /* Safari and Chrome */
+    -o-transition: box-shadow 1s; /* Opera */
+  }
+  .details {
+    background-color:var(--mydarkblue);
+    border-width:2px;
+    border-style:solid;
+    padding-right:3px;
+    border-radius:10px;"
+    cursor: none;
+    color: var(--mylightblue)
+  }
+  .rsyellow { color: var(--myyellow); } 
+  ul {
+    font-size: 14px;
+  }
+  /* Works on Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: var(--sbfront) var(--sbback);
+  }
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 20px;
+  }  
+  *::-webkit-scrollbar-track {
+    background: var(--sbback);
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--sbfront);
+    border-radius: 20px;
+    border: 3px solid var(--sbback);
+  }

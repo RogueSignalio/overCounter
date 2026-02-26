@@ -1,13 +1,44 @@
 <!DOCTYPE html>
 <head>
+<link rel="stylesheet" href="over.css" id="page_style">
 <script src="https://cdn.jsdelivr.net/npm/phaser@v3.90.0/dist/phaser.min.js" crossorigin="anonymous"></script>
 <script src="over_counter.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<div id="flip-clocky"></div>
+<div id="flip-clocky" style="margin:10px;padding:10px;"></div>
+<div style="width:200px;">
+<button onclick="cw.startCountdown(3600);">Hour Start</button>
+<button onclick="cw.startCountdown(20);">20 Secs Start</button>
+<button onclick="cw.increment(10);">+10</button>
+<button onclick="cw.decrement(10);">-10</button>
+<button onclick="cw.clear();">Clear</button>
+<button onclick="cw.pause();">Pause</button>
+<button onclick="cw.resume();">Resume</button>
+<button onclick="cw.setCountdown(20);">20 Secs Set</button>
+<button onclick="cw.startCountdown();">Start Set</button>
+</div>
 </body>
 <script>
+let cw = null
+const onFinish = () => console.log('Countdown finished!');
 
-
-
+document.addEventListener("DOMContentLoaded", () => {
+    cw = new OverCounter({
+        width: 150,
+        height: 45,
+        fontSize: 22,
+        // width: 225,
+        // height: 68,
+        // fontSize: 35,
+        fontColor: '#4f3f2f',
+        fontFamily: 'copperplate',
+        backgroundColor: '#dfcfaf',
+        foregroundImage: './assets/clock_frame6.png',
+    },{ 
+        backgroundColor: '#dfcfaf',
+        tweenTypes: [['scaleY',0,1],['rotation',0,Math.PI*2]],
+        parent: 'flip-clocky',
+        canvasStyle: 'border-radius:10px;',
+    });
+});
 </script>
