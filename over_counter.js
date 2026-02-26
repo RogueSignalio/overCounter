@@ -251,7 +251,6 @@ class OverCounter {
                 preBoot: (game) => {
                     game.scene.add('FlipClockScene', FlipClockScene, true, { 
                         startSeconds: 0,
-                        onFinish: onFinish,
                         ...this.config
                     });
                     game.events.on('blur', function() {
@@ -270,7 +269,7 @@ class OverCounter {
         });
 
         this.rs_soundEngine = this.config.rs_soundEngine
-        this.engine.canvas.style.zIndex = this.config.z_index * -1
+        // this.engine.canvas.style.zIndex = this.config.z_index * -1
         this.counter = 0; // Used to generate unique scene IDs.  Will reset when scene count == 0
         window.overCounter_scripts_loaded = {}; // Store list of loaded JS scripts
     }

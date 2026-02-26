@@ -19,26 +19,22 @@
 </div>
 </body>
 <script>
-let cw = null
-const onFinish = () => console.log('Countdown finished!');
-
-document.addEventListener("DOMContentLoaded", () => {
-    cw = new OverCounter({
-        width: 150,
-        height: 45,
-        fontSize: 22,
-        // width: 225,
-        // height: 68,
-        // fontSize: 35,
-        fontColor: '#4f3f2f',
-        fontFamily: 'copperplate',
-        backgroundColor: '#dfcfaf',
-        foregroundImage: './assets/clock_frame6.png',
-    },{ 
-        backgroundColor: '#dfcfaf',
-        tweenTypes: [['scaleY',0,1],['rotation',0,Math.PI*2]],
-        parent: 'flip-clocky',
-        canvasStyle: 'border-radius:10px;',
-    });
+let cw = new OverCounter({
+    // width: 225,
+    // height: 68,
+    // fontSize: 35,
+    width: 150,
+    height: 45,
+    fontSize: 22,
+    onFinish: function() { console.log('Countdown finished!'); },
+    fontColor: '#4f3f2f',
+    fontFamily: 'copperplate',
+    backgroundColor: '#dfcfaf',
+    foregroundImage: 'https://raw.githubusercontent.com/RogueSignalio/overCounter/refs/heads/main/assets/clock_frame6.png',
+},{ 
+    backgroundColor: '#dfcfaf',
+    tweenTypes: [['scaleY',0,1],['rotation',0,Math.PI*2]],
+    parent: 'active-nav-bkgd-cont',
+    canvasStyle: 'border-radius:10px;position:absolute;top:3px;right:50px;',
 });
 </script>
