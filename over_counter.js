@@ -9,11 +9,14 @@ class FlipClockScene extends Phaser.Scene {
         }
     }
     init(config) {
-        this.config = config
+        this.config = {
+        onFinish: function() { console.log('Timer finished') },
+        ...config
+        }
         console.log(config)
     }
 
-    create(config) {
+    create() {
         // this.config = config
         if (this.config.backgroundImage) {
             this.background = this.add.image(0, 0, 'background',this.config.backgroundImage)
@@ -23,7 +26,7 @@ class FlipClockScene extends Phaser.Scene {
         if (this.config.backgroundColor) { this.cameras.main.setBackgroundColor(this.config.backgroundColor); }
 
         this.totalSeconds = this.config.startSeconds; // || 300; // Default: 5 minutes
-        this.onFinishCallback = this.config.onFinish || null;
+        this.onFinishCallback = this.config.onFinish;
         const fontSize = this.config.fontSize || 64;
         const fontColor = this.config.fontColor || '#dfdfdf';
         const fontFamily = this.config.fontFamily || 'monospace';
@@ -261,7 +264,6 @@ class OverCounter {
                     });
                 },
                 postBoot: (game) => {
-                    console.log(this)
                     this.counter_01 = game.counter_01 = game.scene.getScene('FlipClockScene')
                 }                
             },
